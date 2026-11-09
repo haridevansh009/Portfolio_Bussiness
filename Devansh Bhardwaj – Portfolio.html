@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devansh Bhardwaj – Aspiring Business Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f6f7f3;--surface:#ffffff;--ink:#14233b;--muted:#5a6678;--line:#dde2d8;
+  --accent:#1d7a4b;--accent-ink:#ffffff;--cell:#fff0b8;--head-bg:rgba(246,247,243,.92);
+  --grid:rgba(20,35,59,.06);
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;--body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1722;--surface:#17212f;--ink:#e8edf4;--muted:#9aa7b8;--line:#263447;
+  --accent:#4cc38a;--accent-ink:#0b1a12;--cell:#5a4a12;--head-bg:rgba(15,23,34,.92);--grid:rgba(232,237,244,.06);color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0f1722;--surface:#17212f;--ink:#e8edf4;--muted:#9aa7b8;--line:#263447;
+  --accent:#4cc38a;--accent-ink:#0b1a12;--cell:#5a4a12;--head-bg:rgba(15,23,34,.92);--grid:rgba(232,237,244,.06);color-scheme:dark;}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--head-bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--head-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font:800 18px var(--display);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{padding:7px 12px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap}
+nav a.on{background:var(--cell);color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:16px;flex:none}
+/* hero */
+.hero{padding:64px 0 40px;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 36px}
+.hero h1{font:800 clamp(40px,8vw,76px)/1.02 var(--display);margin:18px 0 14px;letter-spacing:-.02em}
+.fbar{display:flex;align-items:stretch;border:1px solid var(--line);background:var(--surface);border-radius:8px;overflow:hidden;max-width:560px;font:500 15px ui-monospace,Consolas,monospace}
+.fbar b{padding:9px 12px;background:var(--cell);border-right:1px solid var(--line);font-weight:700}
+.fbar span{padding:9px 12px;min-height:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.caret{display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:2px;vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:62ch;color:var(--muted);font-size:18px;margin:0 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:11px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:600;font-size:15px}
+.btn.p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px);transition:transform .15s}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:40px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat strong{display:block;font:800 32px/1.1 var(--display)}
+.stat small{color:var(--muted);font-size:14px}
+/* sections */
+section{padding:56px 0}
+h2{font:800 clamp(26px,4vw,36px)/1.15 var(--display);margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 24px;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:99px;font:500 14px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:6px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.pill.hide{display:none}
+.pill:hover{background:var(--cell)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+summary{cursor:pointer;padding:16px 18px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary strong{font:700 18px var(--display);display:block}
+summary em{font-style:normal;color:var(--muted);font-size:14px}
+summary::after{content:"+";font:600 22px var(--body);color:var(--accent);transition:transform .2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details ul{margin:0;padding:0 18px 16px 38px}
+details li{margin-bottom:6px}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px}
+.step{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:10px 6px;cursor:pointer;font:600 14px var(--body);text-align:center}
+.step i{display:block;font:800 18px var(--display);font-style:normal;color:var(--accent)}
+.step[aria-selected="true"]{background:var(--cell);border-color:var(--accent)}
+.panel{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:18px 20px;min-height:104px}
+.panel h3{margin:0 0 6px;font:700 18px var(--display)}
+.panel p{margin:0;color:var(--muted)}
+.tech{margin:14px 0 0;color:var(--muted);font-size:14px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 10px;font:700 18px var(--display)}
+.card p{margin:0 0 10px;font-size:15px}
+.card p span{display:block;color:var(--muted);font-size:14px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
+@media (max-width:560px){.pipe{grid-template-columns:repeat(5,minmax(64px,1fr));overflow-x:auto}.step{font-size:12px}.hero{padding-top:40px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Devansh Bhardwaj</a>
+  <nav id="nav" aria-label="Sections">
+    <a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#project">Project</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+  <button id="theme" aria-label="Switch light or dark theme" title="Switch theme">◐</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="fbar" aria-hidden="true"><b>fx</b><span><span id="typed"></span><i class="caret"></i></span></div>
+  <h1>Aspiring Business Analyst</h1>
+  <p class="lead">B.Tech Computer Science student (2027 batch) who turns messy data into clear recommendations. I clean data in Excel, find the root cause behind the numbers, and explain it so anyone can act on it.</p>
+  <div class="btns">
+    <a class="btn p" href="#project">See my project</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong data-to="8.0" data-dec="1">0</strong><small>CGPA, B.Tech CSE</small></div>
+    <div class="stat"><strong data-to="30">0</strong><small>cadets led in a task exercise</small></div>
+    <div class="stat"><strong>₹<span data-to="1">0</span> lakh</strong><small>sponsorship pitch prepared</small></div>
+    <div class="stat"><strong data-to="3">0</strong><small>certifications completed</small></div>
+  </div>
+</div></div>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="sub">Tap a category to filter.</p>
+  <div class="chips" id="chips" role="group" aria-label="Filter skills">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" data-f="data" aria-pressed="false">Data analysis</button>
+    <button class="chip" data-f="excel" aria-pressed="false">Excel</button>
+    <button class="chip" data-f="process" aria-pressed="false">Process improvement</button>
+    <button class="chip" data-f="ai" aria-pressed="false">AI tools</button>
+    <button class="chip" data-f="people" aria-pressed="false">Communication</button>
+  </div>
+  <div class="pills" id="pills"></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <p class="sub">Leading people, owning tasks and reporting progress.</p>
+  <details open>
+    <summary><span><strong>National Cadet Corps (NCC), 1 UP Battalion, Agra</strong><em>B Certificate · Aug 2024 – Present</em></span></summary>
+    <ul>
+      <li>Led 30 cadets in the Operation Sindoor task management exercise (May 2025), allocating tasks and tracking progress.</li>
+      <li>Completed NCC training in drill, weapon handling, fitness, map reading and leadership, and earned the B Certificate.</li>
+      <li>Attended the Combined Annual Training Camp (CATC) and an Attachment Camp with a defence unit.</li>
+      <li>Helped plan and run battalion parades, drills, camps and social service initiatives.</li>
+      <li>Took ownership of assigned work and gave timely updates to meet group goals.</li>
+    </ul>
+  </details>
+  <details>
+    <summary><span><strong>Lead Member, Sponsorship Club</strong><em>October 2023 – June 2024</em></span></summary>
+    <ul>
+      <li>Led club members, assigned responsibilities, set deadlines and monitored progress.</li>
+      <li>Researched sponsors, initiated communication and presented proposals, including a Red Bull sponsorship pitch worth ₹1 lakh.</li>
+      <li>Coordinated with organizing, marketing and design teams to run sponsored events.</li>
+      <li>Tracked sponsor interactions, follow-ups and commitments, and helped onboard multiple sponsors.</li>
+    </ul>
+  </details>
+</div></section>
+
+<section id="project"><div class="wrap">
+  <h2>Customer Feedback Analysis</h2>
+  <p class="sub">Insights and recommendations from raw customer comments. Select a step to see what I did.</p>
+  <div class="pipe" role="tablist" id="pipe"></div>
+  <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+  <p class="tech">Tools: Excel (data cleaning, pivot tables, charts), Claude for AI-assisted analysis · 2026</p>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education and learning</h2>
+  <p class="sub">&nbsp;</p>
+  <div class="cols">
+    <div class="card"><h3>Education</h3>
+      <p><strong>Galgotias University</strong><span>B.Tech, Computer Science &amp; Engineering · CGPA 8.0 · 2023 – 2027</span></p>
+      <p><strong>SKDC Public School, Agra</strong><span>Class XII · 82% · 2023</span></p>
+      <p><strong>All Saints School, Agra</strong><span>Class X · 86% · 2021</span></p>
+    </div>
+    <div class="card"><h3>Certifications</h3>
+      <p><strong>Claude 101</strong><span>Claude Academy</span></p>
+      <p><strong>AI Fluency: Framework and Foundations</strong><span>Claude Academy · the 4D framework for using AI responsibly</span></p>
+      <p><strong>CRM Fundamentals</strong><span>Salesforce Trailhead</span></p>
+    </div>
+    <div class="card"><h3>Leadership</h3>
+      <p><strong>2nd Position, NAPSA Debate</strong><span>Agra Division · 2023 · built communication and strategic thinking</span></p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Let’s talk</h2>
+  <p class="sub">Open to Business Analyst internships and entry-level roles.</p>
+  <div class="links">
+    <a class="btn p" href="mailto:de26sharma@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/devansh-bhardwaj-2513672a7/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/haridevansh009" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">Devansh Bhardwaj · Noida, India</div></footer>
+
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* theme */
+  var root=document.documentElement;
+  try{var t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
+  document.getElementById("theme").onclick=function(){
+    var dark=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    var n=dark?"light":"dark";root.setAttribute("data-theme",n);
+    try{localStorage.setItem("theme",n)}catch(e){}
+  };
+  /* typing in formula bar */
+  var lines=['=ROLE("Business Analyst")','=CLEAN(data) → PIVOT(themes)','=ROOT_CAUSE(complaints)','=INSIGHT(dashboard) → ACTION()'];
+  var el=document.getElementById("typed"),li=0,ci=0,del=false;
+  function tick(){
+    var s=lines[li];
+    if(reduce){el.textContent=s;return}
+    el.textContent=s.slice(0,ci);
+    if(!del&&ci<s.length){ci++;setTimeout(tick,55)}
+    else if(!del){del=true;setTimeout(tick,1500)}
+    else if(ci>0){ci--;setTimeout(tick,25)}
+    else{del=false;li=(li+1)%lines.length;setTimeout(tick,300)}
+  }
+  tick();
+  /* counters */
+  function count(n){
+    var to=parseFloat(n.dataset.to),dec=+n.dataset.dec||0;
+    if(reduce){n.textContent=to.toFixed(dec);return}
+    var t0=null;
+    (function f(ts){t0=t0||ts;var p=Math.min((ts-t0)/1100,1);n.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(f)})(performance.now());
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);io.unobserve(e.target)}})});
+  document.querySelectorAll("[data-to]").forEach(function(n){io.observe(n)});
+  /* skills */
+  var skills=[
+    ["Trend Identification","data"],["Data Cleaning","data"],["Customer Feedback Analysis","data"],["Business Reporting","data"],["Data-Driven Recommendations","data"],
+    ["IF / IFERROR","excel"],["SUMIF(S) / COUNTIF(S)","excel"],["VLOOKUP / XLOOKUP","excel"],["INDEX-MATCH","excel"],["Pivot Tables","excel"],["Pivot Charts","excel"],["Conditional Formatting","excel"],["Dashboards","excel"],
+    ["Root Cause Analysis","process"],["5 Whys","process"],["Fishbone Diagram","process"],["SOPs","process"],["Workflow Optimisation","process"],
+    ["Claude","ai"],["ChatGPT","ai"],["Copilot","ai"],
+    ["Stakeholder Management","people"],["Team Leadership","people"],["Strategic & Tactical Thinking","people"],["Communication","people"]
+  ];
+  var pills=document.getElementById("pills");
+  skills.forEach(function(s){var d=document.createElement("span");d.className="pill";d.dataset.c=s[1];d.textContent=s[0];pills.appendChild(d)});
+  document.getElementById("chips").addEventListener("click",function(e){
+    var b=e.target.closest(".chip");if(!b)return;
+    document.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed",c===b)});
+    pills.querySelectorAll(".pill").forEach(function(p){p.classList.toggle("hide",b.dataset.f!=="all"&&p.dataset.c!==b.dataset.f)});
+  });
+  /* project pipeline */
+  var steps=[
+    ["Clean","Cleaned the dataset","Removed duplicates and blanks, standardised ratings and text, and validated the data so every later number could be trusted."],
+    ["Tag","Grouped comments into themes","Used Claude for a fast first pass at tagging comments as delivery, product quality, support or pricing, then reviewed and corrected the AI output by hand to keep it accurate."],
+    ["Pivot","Analysed ratings by theme","Built pivot tables and pivot charts to show ratings by theme and highlight trends and recurring issues."],
+    ["Why","Found the root causes","Applied root cause analysis (5 Whys) to the top complaint themes to separate symptoms from the process gaps behind them."],
+    ["Share","Built the dashboard","Made an Excel dashboard with KPI cards and charts so non-technical readers could follow the issues quickly, then presented recommendations to improve satisfaction and delivery experience."]
+  ];
+  var pipe=document.getElementById("pipe"),panel=document.getElementById("panel");
+  function show(i){
+    pipe.querySelectorAll(".step").forEach(function(b,j){b.setAttribute("aria-selected",i===j)});
+    panel.innerHTML="";var h=document.createElement("h3"),p=document.createElement("p");
+    h.textContent=steps[i][1];p.textContent=steps[i][2];panel.appendChild(h);panel.appendChild(p);
+  }
+  steps.forEach(function(s,i){
+    var b=document.createElement("button");b.className="step";b.setAttribute("role","tab");
+    b.innerHTML="<i>"+(i+1)+"</i>"+s[0];b.onclick=function(){show(i)};pipe.appendChild(b);
+  });
+  show(0);
+  /* nav highlight */
+  var links=[].slice.call(document.querySelectorAll("#nav a"));
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})
+  })},{rootMargin:"-45% 0px -50% 0px"});
+  document.querySelectorAll("section").forEach(function(s){so.observe(s)});
+})();
+</script>
+</body>
+</html>
